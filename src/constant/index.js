@@ -20,9 +20,9 @@ export const cardData = [
         ],
     },
     {
-        id: "text_to_image",
-        title: "Text to Image",
-        content: "Transform text into amazing visuals effortlessly with our Text to Image Generator. Instantly bring your words to life.",
+        id: "text_to_music",
+        title: "Text to Music",
+        content: "Harmonize Your Words: Transform Text into Music with AI Brilliance - Your Personal Text-to-Music Maestro for Creative Symphonies.",
         images: [
             "image1.png",
             "image2.png",
