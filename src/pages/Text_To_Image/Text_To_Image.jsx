@@ -8,13 +8,27 @@ const Text_To_Image = () => {
 
   return (
     <div className={`${styles.container}`}>
-      <h2 className={`${styles.subheading}`}>Create AI Art with our free AI image generator.</h2>
+      <h2 className={`${styles.subheading}`}>
+        Create AI Art with our AI image generator.
+      </h2>
       <form onSubmit={handleSubmit} className={`${styles.form}`}>
-        <input type="text" placeholder="what do you want to generate ?" />
-        <button type="submit">Draw</button>
+        <input
+          type="text"
+          placeholder="what do you want to generate ?"
+          className={`${styles.input}`}
+        />
+        <button type="submit" className={`${styles.button}`}>
+          Draw
+        </button>
       </form>
       <div className={`${styles.outputWindow}`}>
-        {!imageOutput ?? <img src="../../image1.png" alt="generate image" className={`${styles.outputImage}`} />}
+        {!imageOutput ?? (
+          <img
+            src="../../image1.png"
+            alt="generate image"
+            className={`${styles.outputImage}`}
+          />
+        )}
       </div>
     </div>
   );

@@ -16,7 +16,7 @@
     font-family: var(--secondary-font);
 }
 
-input {
+.input {
     padding: 1rem 1rem;
     letter-spacing: 1px;
     margin-right: 1rem;
@@ -30,13 +30,13 @@ input {
     border: 1px solid #49567c84;
 }
 
-input::placeholder {
+.input::placeholder {
     color: var(--white);
     opacity: 0.3;
     font-weight: 600;
 }
 
-button {
+.button {
     padding: 0.9rem 2.5rem;
     font-size: 1.1rem;
     outline: none;
