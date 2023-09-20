@@ -4,6 +4,7 @@ import styles from "./style.module.css";
 const Text_To_Music = () => {
   const [formData, setFormData] = useState({});
   const [fileUrl, setFileUrl] = useState(null);
+  const [loading, setLoading] = useState()
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -13,6 +14,7 @@ const Text_To_Music = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+
       const response = await fetch("http://127.0.0.1:5000/text_to_music", {
         method: "POST",
         headers: {
@@ -21,16 +23,16 @@ const Text_To_Music = () => {
         body: JSON.stringify(formData),
       });
 
-      console.log("response : ", response);
 
       if (response.ok) {
+        // Create a blob URL for the downloaded file
         const blob = await response.blob();
-        console.log("blob : ",blob);
         const url = window.URL.createObjectURL(blob);
-        console.log("url : ",url);
+
+        // Set the file URL in the component state to allow downloading
         setFileUrl(url);
       } else {
-        console.error("Failed to send data to the server");
+        console.error('Error generating music:', response.statusText);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -54,14 +56,15 @@ const Text_To_Music = () => {
           Generate
         </button>
       </form>
+      <label htmlFor="prompt" className={`${styles.label}`}>ex: soft and pleasing lofi beat music with rain in background</label>
       <div className={`${styles.outputWindow}`}>
-        {fileUrl ?? (
-          <div>
+        {fileUrl && (
+          <div className={`${styles.audioContainer}`}>
             <audio controls>
               <source src={fileUrl} type="audio/wav" />
               Your browser does not support the audio element.
             </audio>
-            <a href={fileUrl} download="your_audio.wav">
+            <a className={`${styles.downloadButton}`} href={fileUrl} download="your_audio.wav">
               Download .wav File
             </a>
           </div>
