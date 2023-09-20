@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 const Text_To_Music = () => {
   const [formData, setFormData] = useState({});
   const [fileUrl, setFileUrl] = useState(null);
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState(false)
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -14,7 +14,7 @@ const Text_To_Music = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-
+      setLoading(true);
       const response = await fetch("http://127.0.0.1:5000/text_to_music", {
         method: "POST",
         headers: {
@@ -37,8 +37,8 @@ const Text_To_Music = () => {
     } catch (error) {
       console.error("Error:", error);
     }
+    setLoading(false);
   };
-  console.log("file URL : ", fileUrl);
 
   return (
     <div className={`${styles.container}`}>
@@ -52,8 +52,8 @@ const Text_To_Music = () => {
           className={`${styles.input}`}
           onChange={handleInputChange}
         />
-        <button type="submit" className={`${styles.button}`}>
-          Generate
+        <button type="submit" className={`${styles.button} ${loading ? styles.loading : ''}`}>
+          {loading ? "Generating..." : "Generate"}
         </button>
       </form>
       <label htmlFor="prompt" className={`${styles.label}`}>ex: soft and pleasing lofi beat music with rain in background</label>

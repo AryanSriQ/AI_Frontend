@@ -79,3 +79,7 @@
     font-weight: 500;
     margin-top: 2rem;
 }
+
+.loading {
+    opacity: 0.5;
+}
