@@ -51,7 +51,7 @@ const Translate = () => {
         <div className={`${styles.textContainer}`}>
           <input
             type="text"
-            placeholder="what do you want to generate ?"
+            placeholder="How are you ?"
             name="prompt"
             value={prompt}
             className={`${styles.input}`}
