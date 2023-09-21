@@ -2,35 +2,47 @@ import { useState } from "react";
 import styles from "./style.module.css";
 
 const Text_To_Image = () => {
-  const [imageOutput, setImageOutput] = useState(null);
-  const [formData, setFormData] = useState({ inputField: "" });
+  const [prompt, setPrompt] = useState({});
+  const [image, setImage] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setPrompt({ ...prompt, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
 
-    // try {
-    //   const response = await fetch("http://127.0.0.1:5000/process_data", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
+      const response = await fetch('http://127.0.0.1:5000/text_to_image', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(prompt),
+      });
+      
+      console.log(response);
 
-    //   if (response.ok) {
-    //     const result = await response.json();
-    //     console.log(result);
-    //   } else {
-    //     console.error("Failed to send data to the server");
-    //   }
-    // } catch (error) {
-    //   console.error("Error:", error);
-    // }
+      if (!response || !response?.ok){
+        throw new Error('Something went wrong');
+      }
+      
+      const data = await response.json();
+      if (data.image_id) {
+        // Make a GET request to retrieve the image using the image_id
+        const imageResponse = await fetch(`http://127.0.0.1:5000/get_image/${data.image_id}`);
+        const imageData = await imageResponse.json();
+        
+        if (imageData.image) {
+          // Set the image data in state
+          setImage(imageData.image);
+          console.log(image);
+        }
+      }
+    } catch(error) {
+      console.log("Error : ", error);
+    }
   };
 
   return (
@@ -42,6 +54,7 @@ const Text_To_Image = () => {
         <input
           type="text"
           placeholder="what do you want to generate ?"
+          name="prompt"
           className={`${styles.input}`}
           onChange={handleInputChange}
         />
@@ -50,9 +63,9 @@ const Text_To_Image = () => {
         </button>
       </form>
       <div className={`${styles.outputWindow}`}>
-        {!imageOutput ?? (
+        {image && (
           <img
-            src="../../image1.png"
+            src={image}
             alt="generate image"
             className={`${styles.outputImage}`}
           />
