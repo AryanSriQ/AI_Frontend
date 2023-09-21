@@ -52,7 +52,7 @@ const Text_To_Music = () => {
           className={`${styles.input}`}
           onChange={handleInputChange}
         />
-        <button type="submit" className={`${styles.button} ${loading ? styles.loading : ''}`}>
+        <button type="submit" className={`${styles.button} ${loading ? styles.loading : ''}`} disabled={loading}>
           {loading ? "Generating..." : "Generate"}
         </button>
       </form>

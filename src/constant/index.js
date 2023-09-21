@@ -30,9 +30,9 @@ export const cardData = [
         ],
     },
     {
-        id: "text_to_image",
-        title: "Text to Image",
-        content: "Transform text into amazing visuals effortlessly with our Text to Image Generator. Instantly bring your words to life.",
+        id: "translate",
+        title: "Translator",
+        content: "Instantly translate your words in different language.",
         images: [
             "image4.png",
             "image5.png",
@@ -79,4 +79,27 @@ export const cardData = [
             "image6.png"
         ],
     },
+]
+
+export const languages = [
+    {
+        id: "English",
+        name: "English",
+    },
+    {
+        id: "German",
+        name: "German",
+    },
+    {
+        id: "French",
+        name: "French",
+    },
+    {
+        id: "Russian",
+        name: "Russian",
+    },
+    {
+        id: "Spanish",
+        name: "Spanish",
+    }
 ]
