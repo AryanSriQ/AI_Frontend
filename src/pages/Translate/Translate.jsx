@@ -57,9 +57,6 @@ const Translate = () => {
             className={`${styles.input}`}
             onChange={handleInputChange}
           />
-          <label htmlFor="prompt" className={`${styles.label}`}>
-            ex: soft and pleasing lofi beat music with rain in background
-          </label>
           <div className={`${styles.selectContainer}`}>
             <select
               name="from"

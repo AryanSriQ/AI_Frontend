@@ -61,7 +61,7 @@
 
 .outputWindow {
     margin-top: 2rem;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', 'Tiro Devanagari Hindi', sans-serif;
     color: var(--white);
 }
 

@@ -9,16 +9,16 @@ export const cardData = [
             "image3.png",
         ],
     },
-    {
-        id: "image_to_story",
-        title: "Image To Story",
-        content: "Transform Images into Captivating Stories: Your Visual Narratives, Effortlessly Crafted with Our Image to Story Generator Tool.",
-        images: [
-            "image4.png",
-            "image5.png",
-            "image6.png"
-        ],
-    },
+    // {
+    //     id: "image_to_story",
+    //     title: "Image To Story",
+    //     content: "Transform Images into Captivating Stories: Your Visual Narratives, Effortlessly Crafted with Our Image to Story Generator Tool.",
+    //     images: [
+    //         "image4.png",
+    //         "image5.png",
+    //         "image6.png"
+    //     ],
+    // },
     {
         id: "text_to_music",
         title: "Text to Music",
@@ -53,10 +53,6 @@ export const languages = [
     {
         id: "French",
         name: "French",
-    },
-    {
-        id: "Russian",
-        name: "Russian",
     },
     {
         id: "Spanish",
