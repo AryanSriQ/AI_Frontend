@@ -1,0 +1,93 @@
+.container {
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    margin-top: 2rem;
+    display: flex;
+    align-items: start;
+}
+
+.subheading {
+    margin-top: 10rem;
+    color: var(--white);
+    font-family: var(--secondary-font);
+}
+
+.input {
+    padding: 1rem 1rem;
+    letter-spacing: 1px;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    width: 40rem;
+    font-family: var(--primary-font);
+    background-color: #222839;
+    color: var(--white);
+    border: 1px solid #49567c84;
+}
+
+.input::placeholder {
+    color: var(--white);
+    opacity: 0.3;
+    font-weight: 600;
+}
+
+.button {
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    color: var(--white);
+    background-color: rgb(223, 92, 22);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.label {
+    margin-top: 1rem;
+    color: var(--white);
+    opacity: 0.3;
+    font-size: 0.8rem;
+    font-family: var(--secondary-font);
+    cursor: text;
+    margin-left: 10rem;
+}
+
+.outputWindow {
+    margin-top: 2rem;
+    font-family: 'Noto Sans', 'Tiro Devanagari Hindi', sans-serif;
+    color: var(--white);
+}
+
+.loading {
+    opacity: 0.5;
+}
+
+.select {
+    padding: 0.8rem;
+    border: none;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    font-weight: 600;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectContainer {
+    display: flex;
+    margin-block: 1rem;
+    align-items: center;
+    margin-left: 10rem;
+}

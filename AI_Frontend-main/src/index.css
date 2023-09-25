@@ -1,0 +1,28 @@
+:root {
+  --red: #ff3300;
+  --white: #ffffff;
+  --black: #000000;
+  --shadow: #ff33004a;
+
+  /* Font */
+  --primary-font: "Space Grotesk", sans-serif;
+  --secondary-font: "Inter", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  color: white;
+  background: red;
+}
+
+::selection {
+  color: white;
+  background: red;
+}

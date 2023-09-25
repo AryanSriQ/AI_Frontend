@@ -1,0 +1,36 @@
+.tools_container {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--black);
+    height: 100vh;
+    place-items: center;
+    padding-block: 2rem;
+    background-position: 50% 50%;
+	background-size: cover;
+}
+
+/* .tools_container {
+    background: linear-gradient(270deg, #4ce1ba, #e19c4c, #b8b0f7);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 56%}
+    50%{background-position:100% 45%}
+    100%{background-position:0% 56%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 56%}
+    50%{background-position:100% 45%}
+    100%{background-position:0% 56%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 56%}
+    50%{background-position:100% 45%}
+    100%{background-position:0% 56%}
+} */

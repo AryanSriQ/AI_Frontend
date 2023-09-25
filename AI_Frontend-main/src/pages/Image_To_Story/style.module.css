@@ -1,0 +1,60 @@
+.container {
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    margin-top: 2rem;
+}
+
+.subheading {
+    margin-top: 10rem;
+    color: var(--white);
+    font-family: var(--secondary-font);
+}
+
+.input {
+    padding: 1rem 1rem;
+    letter-spacing: 1px;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    width: 40rem;
+    font-family: var(--primary-font);
+    background-color: #222839;
+    color: var(--white);
+    border: 1px solid #49567c84;
+    cursor: pointer;
+}
+
+.input::placeholder {
+    color: var(--white);
+    opacity: 0.3;
+    font-weight: 600;
+}
+
+.button {
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    color: var(--white);
+    background-color: rgb(223, 92, 22);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.outputWindow {
+    margin-top: 3rem;
+    width: 50rem;
+    height: 30rem;
+    overflow: scroll;
+}
+
+.input[type=file]::file-selector-button {
+    display: none;
+}
