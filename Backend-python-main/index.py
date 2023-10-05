@@ -36,6 +36,7 @@ client = mongo_conn()
 def getdata():
     data = request.get_json()
     prompt = data.get('prompt')
+    time = data.get('time')
 
     processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
     model = MusicgenForConditionalGeneration.from_pretrained("facebook/musicgen-small")
@@ -52,7 +53,7 @@ def getdata():
 
     print(wav_filename)
 
-    audio_values = model.generate(**inputs, max_new_tokens=256)
+    audio_values = model.generate(**inputs, max_new_tokens=time)
     sampling_rate = model.config.audio_encoder.sampling_rate
 
     scipy.io.wavfile.write(wav_filename, rate=sampling_rate, data=audio_values[0, 0].numpy())

@@ -11,7 +11,7 @@ const Card = ({ title, content, images, link }) => {
         spaceBetween={0}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: true,
         }}
         navigation={true}
