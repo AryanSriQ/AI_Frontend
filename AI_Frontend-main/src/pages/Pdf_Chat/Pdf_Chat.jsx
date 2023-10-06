@@ -15,7 +15,7 @@ const Text_To_Image = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await fetch("http://127.0.0.1:5000/prompt_to_text", {
+      const response = await fetch("http://127.0.0.1:5000/pdf_chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,35 +64,6 @@ const Text_To_Image = () => {
         </div>
       )}
     </div>
-    // <div className={`${styles.container}`}>
-    //   <h2 className={`${styles.subheading}`}>
-    //     Chat with the PDF document by asking your query
-    //   </h2>
-    //   <h2 className={`${styles.description}`}>
-    //     Trained PDF : "Indian Constitution"
-    //   </h2>
-    //   <form onSubmit={handleSubmit} className={`${styles.form}`}>
-    //     <input
-    //       type="text"
-    //       placeholder="Ask anything related to Indian Constitution..."
-    //       name="prompt"
-    //       className={`${styles.input}`}
-    //       onChange={handleInputChange}
-    //       autoComplete="off"
-    //     />
-    //     <button
-    //       type="submit"
-    //       disabled={true}
-    //       className={`${styles.button} ${loading ? styles.loading : ""}`}
-    //     >
-    //       {loading ? "Generating..." : "Generate"}
-    //     </button>
-    //   </form>
-    //   <p className={`${styles.label}`}>
-    //     ex: First article of Indian Constitution
-    //   </p>
-    //   <div className={`${styles.output}`}>{output && <p>{output}</p>}</div>
-    // </div>
   );
 };
 

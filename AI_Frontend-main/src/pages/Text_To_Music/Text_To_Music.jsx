@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Radio } from "antd";
 import styles from "./style.module.css";
 import { options } from "../../constant";
+import { Main_Button } from "../../components";
+import { Link } from "react-router-dom";
 
 const Text_To_Music = () => {
   const [formData, setFormData] = useState({ time: 256 });
@@ -28,6 +30,7 @@ const Text_To_Music = () => {
       if (response.ok) {
         // Create a blob URL for the downloaded file
         const blob = await response.blob();
+        console.log(blob);
         const url = window.URL.createObjectURL(blob);
 
         // Set the file URL in the component state to allow downloading
@@ -41,8 +44,11 @@ const Text_To_Music = () => {
     setLoading(false);
   };
 
+  console.log(fileUrl);
+
   return (
     <div className={`${styles.container}`}>
+      <Link className={`${styles.link}`} to='/all_music'>All Generated Music</Link>
       <h2 className={`${styles.subheading}`}>Turn Text into Tunes</h2>
       <form onSubmit={handleSubmit} className={`${styles.form}`}>
         <div className={`${styles.top}`}>
@@ -53,6 +59,7 @@ const Text_To_Music = () => {
             placeholder="what do you want to generate ?"
             className={`${styles.input}`}
             onChange={handleInputChange}
+            disabled={loading}
           />
           <button
             type="submit"
@@ -72,6 +79,7 @@ const Text_To_Music = () => {
           optionType="button"
           buttonStyle="solid"
           name="time"
+          disabled={loading}
         />
       </form>
       <div className={`${styles.outputWindow}`}>
