@@ -1,89 +1,102 @@
 .container {
-    background: var(--black);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .form {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .subheading {
-    margin-top: 10rem;
-    color: var(--white);
-    font-family: var(--secondary-font);
+  margin-top: 10rem;
+  color: var(--white);
+  font-family: var(--secondary-font);
+  text-align: center;
 }
 
 .input {
-    padding: 1rem 1rem;
-    letter-spacing: 1px;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-    outline: none;
-    border: none;
-    width: 40rem;
-    font-family: var(--primary-font);
-    background-color: #222839;
-    color: var(--white);
-    border: 1px solid #49567c84;
+  padding: 1rem 1rem;
+  letter-spacing: 1px;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  width: 40rem;
+  font-family: var(--primary-font);
+  background-color: #222839;
+  color: var(--white);
+  border: 1px solid #49567c84;
 }
 
 .input::placeholder {
-    color: var(--white);
-    opacity: 0.3;
-    font-weight: 600;
+  color: var(--white);
+  opacity: 0.3;
+  font-weight: 600;
 }
 
 .button {
-    padding: 0.9rem 2.5rem;
-    font-size: 1.1rem;
-    outline: none;
-    border: none;
-    color: var(--white);
-    background-color: rgb(223, 92, 22);
-    border-radius: 0.5rem;
-    cursor: pointer;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  color: var(--white);
+  background-color: rgb(223, 92, 22);
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .label {
-    margin: 1rem 0;
-    color: var(--white);
-    opacity: 0.3;
-    font-size: 0.8rem;
-    font-family: var(--secondary-font);
-    cursor: text;
+  margin: 1rem 0;
+  color: var(--white);
+  opacity: 0.3;
+  font-size: 0.8rem;
+  font-family: var(--secondary-font);
+  cursor: text;
 }
 
 .outputWindow {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 .audioContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .downloadButton {
-    text-decoration: none;
-    color: var(--black);
-    font-family: var(--secondary-font);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    background-color: #ff7d36;
-    color: #fff;
-    font-weight: 500;
-    margin-top: 2rem;
+  text-decoration: none;
+  color: var(--black);
+  font-family: var(--secondary-font);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #ff7d36;
+  color: #fff;
+  font-weight: 500;
+  margin-top: 2rem;
 }
 
 .loading {
-    cursor: default;
-    opacity: 0.5;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.link {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--secondary-font);
+  font-size: 1.2rem;
+  padding: 1rem;
+  display: inline-block;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  background-color: rgb(223, 92, 22);
+  border-radius: 0.5rem;
 }

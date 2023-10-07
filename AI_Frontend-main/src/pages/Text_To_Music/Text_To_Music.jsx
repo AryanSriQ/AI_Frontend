@@ -47,59 +47,63 @@ const Text_To_Music = () => {
   console.log(fileUrl);
 
   return (
-    <div className={`${styles.container}`}>
-      <Link className={`${styles.link}`} to='/all_music'>All Generated Music</Link>
-      <h2 className={`${styles.subheading}`}>Turn Text into Tunes</h2>
-      <form onSubmit={handleSubmit} className={`${styles.form}`}>
-        <div className={`${styles.top}`}>
-          <input
-            type="text"
-            name="prompt"
-            id="prompt"
-            placeholder="what do you want to generate ?"
-            className={`${styles.input}`}
+    <>
+      <Link className={`${styles.link}`} to="/all_music">
+        All Generated Music
+      </Link>
+      <div className={`${styles.container}`}>
+        <h2 className={`${styles.subheading}`}>Turn Text into Tunes</h2>
+        <form onSubmit={handleSubmit} className={`${styles.form}`}>
+          <div className={`${styles.top}`}>
+            <input
+              type="text"
+              name="prompt"
+              id="prompt"
+              placeholder="what do you want to generate ?"
+              className={`${styles.input}`}
+              onChange={handleInputChange}
+              disabled={loading}
+            />
+            <button
+              type="submit"
+              className={`${styles.button} ${loading ? styles.loading : ""}`}
+              disabled={loading}
+            >
+              {loading ? "Generating..." : "Generate"}
+            </button>
+          </div>
+          <label htmlFor="prompt" className={`${styles.label}`}>
+            ex: soft and pleasing lofi beat music with rain in background
+          </label>
+          <Radio.Group
+            options={options}
             onChange={handleInputChange}
+            value={formData.time}
+            optionType="button"
+            buttonStyle="solid"
+            name="time"
             disabled={loading}
           />
-          <button
-            type="submit"
-            className={`${styles.button} ${loading ? styles.loading : ""}`}
-            disabled={loading}
-          >
-            {loading ? "Generating..." : "Generate"}
-          </button>
+        </form>
+        <div className={`${styles.outputWindow}`}>
+          {fileUrl && (
+            <div className={`${styles.audioContainer}`} key={fileUrl}>
+              <audio controls>
+                <source src={fileUrl} type="audio/wav" />
+                Your browser does not support the audio element.
+              </audio>
+              <a
+                className={`${styles.downloadButton}`}
+                href={fileUrl}
+                download={fileUrl}
+              >
+                Download .wav File
+              </a>
+            </div>
+          )}
         </div>
-        <label htmlFor="prompt" className={`${styles.label}`}>
-          ex: soft and pleasing lofi beat music with rain in background
-        </label>
-        <Radio.Group
-          options={options}
-          onChange={handleInputChange}
-          value={formData.time}
-          optionType="button"
-          buttonStyle="solid"
-          name="time"
-          disabled={loading}
-        />
-      </form>
-      <div className={`${styles.outputWindow}`}>
-        {fileUrl && (
-          <div className={`${styles.audioContainer}`} key={fileUrl}>
-            <audio controls>
-              <source src={fileUrl} type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
-            <a
-              className={`${styles.downloadButton}`}
-              href={fileUrl}
-              download={fileUrl}
-            >
-              Download .wav File
-            </a>
-          </div>
-        )}
       </div>
-    </div>
+    </>
   );
 };
 

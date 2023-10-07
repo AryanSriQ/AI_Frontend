@@ -29,9 +29,9 @@ const All_Music = () => {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Music Files</h1>
-      <ul>
+    <div className={`${styles.audio_container}`}>
+      <h1 className={`${styles.heading}`}>All Music Files</h1>
+      <ul className={`${styles.list}`}>
         {musicFiles &&
           musicFiles.map((data, index) => (
             <li key={index}>

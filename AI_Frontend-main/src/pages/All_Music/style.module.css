@@ -1,0 +1,17 @@
+/* @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200"); */
+.heading {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  color: var(--white);
+  font-family: var(--secondary-font);
+  font-weight: 600;
+}
+
+.list {
+  display: block;
+  list-style: none;
+}
+
+body {
+  background-color: var(--black);
+}

@@ -1,0 +1,82 @@
+.player_controls {
+  display: flex;
+  margin: 2rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.player_controls {
+  background: linear-gradient(14deg, #78fbd9, #cd74ff);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 6s ease infinite;
+  -moz-animation: AnimationName 6s ease infinite;
+  animation: AnimationName 6s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 82% 0%;
+  }
+  50% {
+    background-position: 19% 100%;
+  }
+  100% {
+    background-position: 82% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 82% 0%;
+  }
+  50% {
+    background-position: 19% 100%;
+  }
+  100% {
+    background-position: 82% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 82% 0%;
+  }
+  50% {
+    background-position: 19% 100%;
+  }
+  100% {
+    background-position: 82% 0%;
+  }
+}
+
+.player_controls button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+.player_controls button:hover {
+  background-color: #0056b3;
+}
+
+.prompt {
+  text-align: center;
+  align-items: center;
+  -webkit-line-clamp: 1;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  font-family: var(--secondary-font);
+  font-weight: 300;
+}
+
+.prompt span {
+    font-family: var(--primary-font);
+    font-weight: 800;
+}
